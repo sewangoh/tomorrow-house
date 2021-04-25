@@ -1,0 +1,86 @@
+/*
+  *MOBILE (<768px이하) -------------------
+  *fixture               sm
+  * # of columns          4
+  * unit                (100%-(5ox * 2)) /4 -20px
+  * gutter               20px
+  * margin               5px
+  * container-size      100% -(5px * 2)
+  *
+  *TABLET (>768px이상) -------------------
+  *fixture               md
+  * # of columns          12
+  * unit                (100%-(5ox * 2)) /4 -20px
+  * gutter               20px
+  * margin               30px
+  * container-size       100% -(30px * 2)
+  * max-container-size   960px
+  *
+  *DESK-TOP (>1200px이상) -------------------
+  *fixture               lg
+  * # of columns          1x2
+  * unit                75px
+  * gutter               20px
+  * margin               auto
+  * container-size       1140px
+  * max-container-size   1140px
+ */
+
+$gutter: 20px;
+
+$sm-columns: 4;
+$sm-margin: 5px;
+
+$md-breakpoint: 768px;
+$md-columns: 12;
+$md-margin: 30px;
+$md-max-container: 960px + $md-margin * 2;
+
+$lg-breakpoint: 1200px;
+$lg-columns: 12;
+$lg-unit: 75px;
+$lg-max-container: ($lg-unit + $gutter) * $lg-columns;
+
+.container {
+  width: 100%;
+  padding: 0 $sm-margin;  //위아래0 얖옆으로 5px
+  margin: 0 auto;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap; //4칸 꽉차면 아래도 떨어뜨림.
+  }
+
+  [class^='col-'] {
+    padding: 0 $gutter / 2; //class중 col-하는애들 모두골라줌
+  }
+
+  @for $i from 1 through $sm-columns {
+    .col-sm-#{$i} {
+      width: percentage($i / $sm-columns);
+    }
+  }
+
+  @media screen and (min-width: $md-breakpoint) {
+    max-width: $md-max-container;  //960초과하지마라
+    padding: 0 $md-margin;
+
+    @for $i from 1 through $md-columns {
+      .col-md-#{$i} {
+        width: percentage($i / $md-columns);
+      }
+    }
+  }
+
+  @media screen and (min-width: $lg-breakpoint) {
+    max-width: $lg-max-container;
+    padding: 0;
+
+    @for $i from 1 through $lg-columns {
+      .col-lg-#{$i} {
+        width: ($lg-unit + $gutter) * $i;
+      }
+    }
+  }
+}
+
