@@ -1,0 +1,24 @@
+@mixin pos-center-x($type: absolute) {
+  @if ($type == fixed or $type == absolute) {
+    position: $type; //default absolute 다른 인자 들어오면 바뀐당
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@mixin pos-center-y($type: absolute) {
+  @if ($type == fixed or $type == absolute) {
+    position: $type; //default absolute 다른 인자 들어오면 바뀐당
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin pos-center($type: absolute) {
+  @if ($type == fixed or $type == absolute) {
+    position: $type; //default absolute 다른 인자 들어오면 바뀐당
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%); //x축 y 축
+  }
+}
