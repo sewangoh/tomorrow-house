@@ -1,0 +1,32 @@
+//key : value
+$flex-map:(
+  start: flex-start,
+  end: flex-end,
+  between: space_between,
+  around: space-arround,
+  stretch: stretch,
+  center: center
+);
+
+@function _get-flex-value($key) { //특정값을 반환
+  @return map-get($flex-map, $key);
+}
+
+@mixin flexbox($jc: center, $ai: center) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin inline-flexbox($jc: center, $ai: center) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin colum-flexbox($jc: center, $ai: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $jc;
+  align-items: $ai;
+}
