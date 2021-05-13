@@ -1,3 +1,4 @@
+//순서대로 import 하니까 참고해보자.쓸때 오류남..
 @import './constants/colors';
 @import './constants/typography';
 @import './constants/breakpoinst';
@@ -5,6 +6,7 @@
 @import './base/fonts';
 @import './base/normalize';
 @import './base/reset';
+@import './base/globals';
 
 @import './mixins/text-style';
 @import './mixins/responsive';
