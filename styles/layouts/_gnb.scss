@@ -1,0 +1,44 @@
+.gnb {  //& 클래스 이름만들어줌.
+  position: relative;
+
+  &-wrapper {
+    @include flexbox(between);
+    height: 50px;
+    border-bottom: 1px solid $border;
+  }
+
+  &-right {
+    .button-group {
+      @include flexbox(end);
+    }
+
+    .gnb-search-button {
+      margin-right: 4px;
+    }
+  }
+
+  &-icon-button {
+    @include flexbox; //좌우정렬
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    color: $secondary;
+  }
+
+  .gnb-menu-button {
+    color: $blue;
+  }
+
+  .logo {
+    @include pos-center;
+    a {
+      display: block;
+    }
+
+    img {
+      display: block;
+      width: auto;
+      height: 20px;
+    }
+  }
+}
