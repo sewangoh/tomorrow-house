@@ -14,21 +14,9 @@
       @include flexbox(end);
     }
 
-    .gnb-search-button {
+    .gnb-icon-button.is-search {
       margin-right: 4px;
     }
-  }
-
-  &-icon-button {
-    @include flexbox; //좌우정렬
-    width: 32px;
-    height: 32px;
-    font-size: 24px;
-    color: $secondary;
-  }
-
-  .gnb-menu-button {
-    color: $blue;
   }
 
   .logo {
@@ -88,6 +76,7 @@
   @include responsive(D) {
     &-right {
       .input-group {
+        width: 246px;
         margin-right: 24px;
       }
     }
