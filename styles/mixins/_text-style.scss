@@ -2,8 +2,7 @@
   font-size: $font-size-12;
   line-height: $line-height-12;
   letter-spacing: $letter-spacing-12;
-  color: $color;
-
+  //color: $color;
   // @if (type-of($color) == color) {
   //   color: $color; //color라는 타입이면!($color != false)이케하면 다른것도들어올수있어
   // }
@@ -41,28 +40,24 @@
 
 @mixin text-style($size, $color: false) {
   @if($size == 12) {
-    @include text-style-12();
+    @include text-style-12;
   }
   @if($size == 13) {
-    @include text-style-13();
+    @include text-style-13;
   }
   @if($size == 14) {
-    @include text-style-14();
+    @include text-style-14;
   }
   @if($size == 16) {
-    @include text-style-16();
+    @include text-style-16;
   }
   @if($size == 18) {
-    @include text-style-18();
+    @include text-style-18;
   }
   @if($size == 24) {
-    @include text-style-24();
+    @include text-style-24;
   }
   @if (type-of($color) == color) {
   color: $color; //color라는 타입이면!($color != false)이케하면 다른것도들어올수있어
   }
-}
-
-p {
-  @include text-style(24, $secondary);
 }

@@ -1,11 +1,11 @@
 @mixin responsive($screen) {
   @if ($screen == 'T') {
-    @media screen and (minb-width: $md-breakpoint) {
+    @media screen and (min-width: $md-breakpoint) {
       @content; //밑에 선언한 css 내용들이 여기로 들어가
     }
   }
   @if ($screen == 'D') {
-    @media screen and (minb-width: $lg-breakpoint) {
+    @media screen and (min-width: $lg-breakpoint) {
       @content; //밑에 선언한 css 내용들이 여기로 들어가
     }
   }
